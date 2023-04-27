@@ -15,6 +15,7 @@ urlpatterns = [
 
     path('dashboard', views.dashboard, name="dashboard"),
     path('news', views.news, name="news"),
+    path('helpcenter', views.helpcenter, name="helpcenter"),
 
     path('addSymbol', views.addSymbol, name="addSymbol"),
     path('prediction', views.prediction, name="prediction"),

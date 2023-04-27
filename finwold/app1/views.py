@@ -10,7 +10,7 @@ import json
 from django.http import JsonResponse
 # from django.contrib.auth.models import User
 from app1.models import User, Contact_Us
-from app1.models import CompanyName, Expense, Category
+from app1.models import CompanyName, Expense, Category, News
 
 from django.http import JsonResponse
 from django.views.decorators.http import require_GET
@@ -95,6 +95,10 @@ def home(request):
     return render(request, 'app1/home.html')
 # ----------------------------------------HOME page ENDS---------------------------------------------------------
 
+def helpcenter(request):
+    return render(request, 'app1/helpcenter.html')
+# ----------------------------------------HELP CENTER page ENDS---------------------------------------------------------
+
 
 def contactUs(request):
 
@@ -144,6 +148,9 @@ def dashboard(request):
         # Converting the figure to HTML and pass it to the template
         chart_html = fig.to_html(full_html=False)
 
+
+        news = News.objects.order_by('-date')[:3]
+
     except:
         messages.error(request,"Internet connection ko necessary")
         results=CompanyName.objects.all
@@ -152,7 +159,7 @@ def dashboard(request):
     
     #getting the company names from the database
     results=CompanyName.objects.all
-    return render(request, 'app1/dashboard.html', {'chart_html': chart_html,'ticker_data': ticker_data,"showName":results})
+    return render(request, 'app1/dashboard.html', {'chart_html': chart_html, 'ticker_data': ticker_data, "showName":results, 'news': news})
 #---------------------------------------dashboard ends-----------------------------------------------------------------------------------------------------
 
 
@@ -235,7 +242,9 @@ def addSymbol(request):
 
 @login_required(login_url='login')
 def news(request):
-    return render(request, 'app1/news.html')
+    news = News.objects.all()
+    context = {'news': news}
+    return render(request, 'app1/news.html', context)
 #---------------------------------------news ends  ends-----------------------------------------------------------------------------------------------------
 
 

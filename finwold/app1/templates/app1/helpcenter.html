@@ -109,39 +109,26 @@
 
             <section class="content">
 
-                <div class="overview">
-                    <h1>Market News</h1>
-                    <h4 id="current_date"></h4>
-                </div>
-    
-                <section class="blog" id="blog"> 
-                    <div class="container" style="display:block;">
-                        
-                        <ul class="blog-list" style="display:block;">
+         
 
-                        {% for n in news %}
-                            <li>
-                                <div class="blog-card">
-    
-                                    <div class="blog-meta">
-                                        <span>                               
-                                            <ion-icon name="calendar-outline"></ion-icon>
-                                            <time datetime"2023-02-16" >{{ n.date|date }}</time>
-                                        </span>
-                                    </div>
-                                    <h3 class="blog-title">{{ n.title|capfirst }}</h3>                     
-                                    <p class="blog-text">{{ n.description|capfirst }}</p>
-     
-                                </div>
+                <div class="content2">
+                    <div class="description-container">
+                        <h1 class="description-title">Help center</h1>
+                        <p class="description-text">The stocks data are live data of NASDAQ stock Exchange of USA. </p>
+                        <p class="description-text">To predict the stocks ticker listed in NASDAQ. please follow the following instructions. </p>
+                        <ul style="margin-top:20px;">
+                            <li>              
+                                <p class="description-text">Click on <strong>Prediction</strong> option on sidebar or <strong>Dashboard</strong> option on sidebar.</p>
                             </li>
-                        {% endfor %}
-
-                        </ul>
-    
+                            <li>              
+                                <p class="description-text">Select the company on the search bar and press <strong>Enter</strong></p>
+                            </li>
+                            <li>              
+                                <p class="description-text">You will see the 10 days future prediction price of that stocks symbol. </p>
+                            </li>
+                        </ul>    
                     </div>
-                </section> 
-
-                <div class="content2"></div>
+                </div>
     
     
     
@@ -167,7 +154,6 @@
 
 
     <script src="{%static 'js/dashboard_script2.js'%}"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
 </body>
 </html>

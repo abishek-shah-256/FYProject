@@ -53,3 +53,14 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+# models for market news section
+
+class News(models.Model):
+    date = models.DateTimeField(default=now)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+
+    def __str__(self):
+        return self.title

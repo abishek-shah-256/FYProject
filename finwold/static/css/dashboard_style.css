@@ -472,11 +472,12 @@ section .overview h4{
 .chart{
     display: flex;
     width: 100%;
-    height: 500px;
+    height: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-top:50px;
+    gap: 20px;
 }
 
 canvas#myChart{
@@ -499,8 +500,109 @@ canvas#myChart{
     /* justify-content: center; */
 }
 
+.description-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+  
+.description-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+}
+  
+.description-text {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    color: rgb(214, 99, 99);
+}
 
+/* -------------------
+BLOG SECTION
+------------------- */
+.container {
+    /* padding-inline: 15px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.blog{
+    padding-block: 80px;
+}
+
+.blog .section-title{
+    margin-bottom: 20px;
+    font-size: 24px;
+
+}
+
+.blog .section-text{
+    margin-bottom: 40px;
+}
+
+.blog-list{
+    display: grid;
+    gap: 30px;
+    padding: 15px;
+    list-style: none;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.blog-card{
+    padding: 40px 30px;
+    margin: 20px;
+    background: #f2f3f7;
+    box-shadow: 0.2em 0.2em 1.2em #d2dce9,
+                -0.2em -0.2em 1em #ffffff;
+    border-radius: 20px;
+}
+
+.blog-meta{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: hsl(244, 17%, 61%);
+    margin-bottom: 10px;
+}
+
+.blog-meta span{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.blog-title{
+    font-size: 20px;
+    color: hsl(245, 21%, 21%);
+}
+
+.blog-text{
+    color: hsl(122, 20%, 25%);
+    font-size:  15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.blog-link-btn{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: hsla(144, 23%, 42%,1);
+    font-weight: 600;
+}
+
+.blog-link-btn:is(:hover,:focus){
+    color: hsl(210, 11%, 15%);
+}
+  
 
 
 @media (max-width: 990px){
@@ -530,18 +632,11 @@ canvas#myChart{
         left: 0;
     }
 
-
-
-
-
 }
-/* @media (min-width: 1124px){
-    
-    .sidebar{
-        width: 170px;
-    }
-    .main{
-        left: 200px;
-    }
 
-} */
+@media (max-width: 1124px){
+    
+    .blog-list{
+        grid-template-columns: 1fr 1fr;
+    }
+}
